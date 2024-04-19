@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CD</title>
+    <style>
+        /* CSS RESET */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure, 
+        footer, header, hgroup, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        /* FIN CSS RESET */
+        div {
+            box-sizing:border-box; 
+        }
+        .page {
+            width: 21.59cm;
+            height: 35.56cm;
+         /* background: url('file:///C:/Users/.../Downloads/cd-2.jpg');
+            background-size: contain; */
+            margin: 0;
+        }
+        .container {
+            width: 19cm;
+            height: 29.2cm; /* 
+            margin-left: 1.30cm;  Editable
+            margin-top:3.06cm;      /* Editable */
+            position: absolute;
+            font-size: 10pt;
+        }
+        .datos {
+            width: 16.2cm;
+            height: 2.87cm;
+            float: left;
+        }
+        .cabecera {
+            width: 19cm;
+            margin-left: 1.2cm;
+            float: left;
+        }
+        .n {
+            width: 8.4cm;
+            height: 1.27cm;
+            text-transform: capitalize;
+            float: left;
+        }
+        .address-c {    
+            width: 19cm;
+            height: 0.84cm;
+            float: left;
+            margin-left: 1.2cm;
+        }
+        .a {
+            width: 8.4cm;
+            height: 0.84cm;
+            padding-top: 0.5cm;
+            float: left;
+        }
+        .zip-city-state {
+            width: 19cm;
+            height: 0.75cm;
+            float: left;
+            margin-left: 1.09cm;
+        }
+        .zip-city-state div {
+            padding: 0.5cm 0.15cm 0cm 0.15cm;
+            height:0.75cm;
+            float: left;
+        }
+        .zip {
+            width:2.53cm; 
+        }
+        .city {
+            width: 3.04cm;
+        }
+        .state {
+            width: 2.74cm;
+        }
+        .l-enty {
+            width: 16.23cm;
+            height: 6.57cm;
+            float: left;
+        }
+        .contenido-carta {
+            width:18.75cm;
+            height:13.17cm;
+            padding: 0.3cm;
+            float: left;
+            text-align: justify;
+            
+        }
+        .content-firma {
+            width: 18.1cm;
+            height: 3.4cm;
+            float: left;
+        }
+        .c-firma{
+            right:0cm;
+            position: absolute;
+        }
+        .c-firma, .efirma, .firmante, .dni {
+            width: 6cm;
+            text-align: center;
+        }
+        .e-firma {
+            height: 2.4cm;
+        }
+        .dni {
+            height:0.75cm;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="container" style="margin-left: {{#each margen_izq}}{{this.margen_izq}}{{/each}}cm;margin-top: {{#each margen_sup}}{{this.margen_sup}}{{/each}}cm;">
+            <div class="datos">
+                <div class="cabecera">
+                    <div class="n">
+                    <!-- remitente 
+                    Eliseo Esteverena -->
+                    {{#each remitente}}
+                    {{this.name}}
+                    {{/each}}
+                    </div>
+                    <div class="n">
+                    <!-- destinatario 
+                    Eliseo Esteverena -->
+                    {{#each destinatario}}
+                    {{this.name}}
+                    {{/each}}
+                    </div>
+                </div>
+                <div class="address-c">
+                    <div class="a">
+                    <!--
+                        Monroe 4622 6to A -->
+                    {{#each remitente}}
+                    {{this.adress}}
+                    {{/each}}
+                    </div>
+                    <div class="a">
+                        <!--
+                        Monroe 4622 6to A -->
+                    {{#each destinatario}}
+                    {{this.adress}}
+                    {{/each}}
+
+                    </div>
+                </div>
+                <div class="zip-city-state">
+                    <div class="zip">
+                    <!-- CP 
+                    1100 -->
+                    {{#each remitente}}
+                    {{this.cp}}
+                    {{/each}}
+
+                    </div>
+                    <div class="city">
+                    <!-- Localidad 
+                    Buenos Aires
+                    -->
+                    {{#each remitente}}
+                    {{this.city}}
+                    {{/each}}
+
+                    </div>
+                    <div class="state">
+                    <!-- Provincia 
+                    Buenos Aires
+                    -->
+                    {{#each remitente}}
+                    {{this.state}}
+                    {{/each}}
+
+                    </div>
+                    <div class="zip">
+                    <!-- CP 
+                    1100
+                    -->
+                    {{#each destinatario}}
+                    {{this.cp}}
+                    {{/each}}
+
+                    </div>
+                    <div class="city">
+                    <!-- Localidad 
+                    Buenos Aires
+                    -->
+                    {{#each destinatario}}
+                    {{this.city}}
+                    {{/each}}
+
+                    </div>
+                    <div class="state">
+                    <!-- Provincia 
+                    Buenos Aires -->
+                    {{#each destinatario}}
+                    {{this.state}}
+                    {{/each}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="l-enty">&nbsp;</div>
+            <div class="datos">
+                <div class="cabecera">
+                    <div class="n">
+                    <!-- remitente 
+                    Eliseo Esteverena -->
+                    {{#each remitente}}
+                    {{this.name}}
+                    {{/each}}
+                    </div>
+                    <div class="n">
+                    <!-- destinatario 
+                    Eliseo Esteverena -->
+                    {{#each destinatario}}
+                    {{this.name}}
+                    {{/each}}
+                    </div>
+                </div>
+                <div class="address-c">
+                    <div class="a">
+                    <!--
+                        Monroe 4622 6to A -->
+                    {{#each remitente}}
+                    {{this.adress}}
+                    {{/each}}
+                    </div>
+                    <div class="a">
+                        <!--
+                        Monroe 4622 6to A -->
+                    {{#each destinatario}}
+                    {{this.adress}}
+                    {{/each}}
+
+                    </div>
+                </div>
+                <div class="zip-city-state">
+                    <div class="zip">
+                    <!-- CP 
+                    1100 -->
+                    {{#each remitente}}
+                    {{this.cp}}
+                    {{/each}}
+
+                    </div>
+                    <div class="city">
+                    <!-- Localidad 
+                    Buenos Aires
+                    -->
+                    {{#each remitente}}
+                    {{this.city}}
+                    {{/each}}
+
+                    </div>
+                    <div class="state">
+                    <!-- Provincia 
+                    Buenos Aires
+                    -->
+                    {{#each remitente}}
+                    {{this.state}}
+                    {{/each}}
+
+                    </div>
+                    <div class="zip">
+                    <!-- CP 
+                    1100
+                    -->
+                    {{#each destinatario}}
+                    {{this.cp}}
+                    {{/each}}
+
+                    </div>
+                    <div class="city">
+                    <!-- Localidad 
+                    Buenos Aires
+                    -->
+                    {{#each destinatario}}
+                    {{this.city}}
+                    {{/each}}
+
+                    </div>
+                    <div class="state">
+                    <!-- Provincia 
+                    Buenos Aires -->
+                    {{#each destinatario}}
+                    {{this.state}}
+                    {{/each}}
+
+                    </div>
+                </div>
+            </div>
+            <div class="contenido-carta">
+                <!-- -->
+                {{#each cuerpo}}
+                {{this.cuerpo}}<br>
+                {{/each}}
+            </div>
+            <div class="content-firma">
+                <div class="c-firma">
+                    <div class="e-firma">
+                        &nbsp;
+                    </div>
+                    <div class="firmante">
+                        {{#each firma}}
+                        {{this.name}}
+                        {{/each}}
+                       
+                    </div>
+                    <div class="dni">
+                        {{#each firma}}
+                        {{this.dni}}
+                        {{/each}}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

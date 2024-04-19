@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Nueva Carta Documento</title>
+
+</head>
+
+<body>
+  <h1>Nueva Carta Documento</h1>
+  <!-- Project -->
+  <div class="container">
+    <div class="six columns">
+      <h4>Datos Remitente:</h4>
+      <input class="u-full-width"  id="name_rt" placeholder="Nombre" type="text">
+      <input class="u-full-width"  id="address_rt" placeholder="Direción" type="text">
+      <input class="u-full-width"  id="cp_rt" placeholder="Código Postal" type="text">
+      <input class="u-full-width"  id="city_rt" placeholder="Localidad" type="text">
+      <input class="u-full-width"  id="state_rt" placeholder="Provincia" type="text">
+    </div>
+    <div class="six columns">
+      <h4>Datos Destinatario</h4>
+      <input class="u-full-width"  id="name_dt" placeholder="Nombre" type="text">
+      <input class="u-full-width"  id="address_dt" placeholder="Direción" type="text">
+      <input class="u-full-width"  id="cp_dt" placeholder="Código Postal" type="text">
+      <input class="u-full-width"  id="city_dt" placeholder="Localidad" type="text">
+      <input class="u-full-width"  id="state_dt" placeholder="Provincia" type="text">
+    </div>
+    <hr>
+    <div class="six columns">
+      <h4>Cuerpo de la carta(sin firma)</h4>
+      <textarea class="u-full-width cuerpo-cd" id="body_cd"></textarea>
+      <h4>Firma y DNI:<h4>
+        <input class="u-full-width"  id="sing_name" placeholder="Firmante" type="text">
+        <input class="u-full-width"  id="sing_dni" placeholder="DNI" type="text">
+    </div>
+    <div class="six columns">
+      <label>Margen Izquierdo(cm):</label>
+      <input class="u-full-width"  id="margin_left" value="1.30" type="number" step="0.01" inputmode="numeric">
+      <label>Margen Superior(cm):</label>
+      <input class="u-full-width"  id="margin_top" value="3.06" type="number" step="0.01" inputmode="numeric">
+      <button id="res_margin" class="button button-secondary">Restablecer Margénes</button>
+    </div>
+    <div class="six columns">
+        <button id="send_data" class="button button-primary u-full-width">Generar Carta Documento</button>
+    </div>
+    </div>
+  </div>
+
+  <script src="../script/script.js"></script>
+</body>
+</html>
